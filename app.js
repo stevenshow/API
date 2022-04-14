@@ -27,16 +27,17 @@ const memeRoutes = require("./api/meme/memes");
 // Used for logging
 app.use(morgan("dev"));
 
-app.use((req, res, next) => {
-  // Who can access the API
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Content-Type");
-  if (req.method === "OPTIONS") {
-    // What methods you want your API to support
-    res.header("Access-Control-Allow-Methods", "GET");
-    return res.status(200).json({});
-  }
-});
+// TODO Causes request to hang
+// app.use((req, res, next) => {
+//   // Who can access the API
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header("Access-Control-Allow-Headers", "Content-Type");
+//   if (req.method === "OPTIONS") {
+//     // What methods you want your API to support
+//     res.header("Access-Control-Allow-Methods", "GET");
+//     return res.status(200).json({});
+//   }
+// });
 
 app.use("/memes", memeRoutes);
 
