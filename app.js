@@ -8,7 +8,7 @@ const bodyParser = require("body-parser");
 // Can change <user>:<password>
 // Can change mongodb.net/>database>
 const uri =
-  "mongodb+srv://stevenshow:xp7tsvhxIXG4DCLs@memes.w8fh1.mongodb.net/Facts?retryWrites=true&w=majority";
+  "mongodb+srv://stevenshow:"+process.env.MONGO_ATLAS_PW+"@memes.w8fh1.mongodb.net/Facts?retryWrites=true&w=majority";
 const conenctionParams = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
